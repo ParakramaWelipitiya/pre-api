@@ -1,0 +1,33 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Pulls your code onto the GitHub server
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      
+      # 2. Installs Node.js version 20
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          
+      # 3. Installs dependencies exactly as they are in package-lock.json
+      - name: Install Dependencies
+        run: npm ci
+
+      # 4. Runs your Jest tests
+      - name: Run Tests
+        run: npm test
