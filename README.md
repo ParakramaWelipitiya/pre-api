@@ -1,3 +1,5 @@
+<img width="1024" height="130" alt="preapi banner" src="https://github.com/user-attachments/assets/b02c2a53-cf1a-4658-be5a-baa39ec38580" />
+
 # pre-api
 
 A hardened, production-ready Node.js & Express REST API boilerplate designed for high-performance, secure, and zero-budget serverless deployments.
